@@ -1,0 +1,79 @@
+div {
+    display: flex;
+}
+div.navbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+    height: 100px;
+    padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-decoration: none;
+    padding-left: 17rem;
+    gap: 2rem;
+    
+}
+div.navbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 0px; /* space between img and h1 */
+    margin-right: 0px;
+}
+div.navbar img {
+    height: 30px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    padding-top: 1px;
+}
+div.navbar h1 a {
+    font-size: 27px;
+    color: black;
+    display: flex;
+    text-emphasis: bold;
+    font-weight: bolder;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 40px;
+    font-weight: 900;
+
+    
+}
+div.navbar ul {
+    display: flex;
+    list-style-type: none; /* remove bullets */
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    height: 30px;
+}
+div.navbar ul li a {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: grey;
+    font-weight: bolder;
+}
+div.navbar ul li a:hover {
+    
+    color: orange;
+}
+/* Button styling */
+.nav-btn {
+    background-color: blue;   /* your button color */
+    color: white;              /* makes the text white */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+/* Push button away from other links */
+div.navbar ul li:last-child {
+    margin-left: 14rem; /* adjust spacing between ul links and button */
+}
