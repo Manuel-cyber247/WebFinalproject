@@ -1,0 +1,24 @@
+div {
+  display: flex;
+
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  padding-right: 13rem;
+  color: darkblue;
+  font-size: 10px; 
+  justify-content: space-evenly;
+}
+p{
+height: 50%;
+font-size: medium;
+color: dimgrey;
+}
+
+div vIdeo{
+  width: 500px;
+  height: auto;
+  box-shadow: 50px;
+  border-radius: 8px;
+}
