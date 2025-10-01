@@ -1,6 +1,5 @@
-div {
-    display: flex;
-}
+/* Navbar fixed at top (if not already done) */
+
 div.navbar {
     display: flex;
     align-items: center;
@@ -14,6 +13,8 @@ div.navbar {
     text-decoration: none;
     padding-left: 17rem;
     gap: 2rem;
+    box-shadow: 30px;
+    justify-content: flex-start;
     
 }
 div.navbar .brand {
@@ -24,10 +25,11 @@ div.navbar .brand {
 }
 div.navbar img {
     height: 30px;
+
     width: 50px;
     border-radius: 50%;
     margin-left: 10px;
-    padding-top: 1px;
+    
 }
 div.navbar h1 a {
     font-size: 27px;
