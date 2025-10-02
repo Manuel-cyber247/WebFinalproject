@@ -1,5 +1,10 @@
 /* Navbar fixed at top (if not already done) */
-
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+}
 div.navbar {
     display: flex;
     align-items: center;

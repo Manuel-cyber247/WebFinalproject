@@ -10,8 +10,7 @@ import hsix_image from "../assets/one.jpeg";
 
 function OpenSource() {
   const [visibleIcons, setVisibleIcons] = useState([]);
-  const [phase, setPhase] = useState('appearing'); // 'appearing' or 'disappearing'
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
 
   // Icons in the sequence they should appear
   const icons = [
@@ -23,45 +22,35 @@ function OpenSource() {
   ];
 
   useEffect(() => {
+    const steps = [
+      // Step 0: Show bell
+      () => setVisibleIcons(['bell']),
+      // Step 1: Show bell + green
+      () => setVisibleIcons(['bell', 'green']),
+      // Step 2: Show bell + green + man
+      () => setVisibleIcons(['bell', 'green', 'man']),
+      // Step 3: Show bell + green + man + message
+      () => setVisibleIcons(['bell', 'green', 'man', 'message']),
+      // Step 4: Show all icons
+      () => setVisibleIcons(['bell', 'green', 'man', 'message', 'verify']),
+      // Step 5: Show all icons for a moment
+      () => setVisibleIcons(['bell', 'green', 'man', 'message', 'verify']),
+      // Step 6: Hide all icons
+      () => setVisibleIcons([]),
+      // Step 7: Pause before restarting
+      () => setVisibleIcons([])
+    ];
+
     const interval = setInterval(() => {
-      if (phase === 'appearing') {
-        // Appearing phase
-        if (currentIndex < icons.length) {
-          if (currentIndex === 2) { // When man appears
-            setVisibleIcons(prev => [...prev, 'man']);
-            setTimeout(() => {
-              setVisibleIcons(prev => [...prev, 'message']);
-            }, 300);
-          } else {
-            setVisibleIcons(prev => [...prev, icons[currentIndex].id]);
-          }
-          setCurrentIndex(prev => prev + 1);
-        } else {
-          // All icons have appeared, switch to disappearing phase after a pause
-          setTimeout(() => {
-            setPhase('disappearing');
-            setCurrentIndex(icons.length - 1);
-          }, 1000);
-        }
-      } else {
-        // Disappearing phase
-        if (currentIndex >= 0) {
-          if (currentIndex === 2) { // When removing man and message together
-            setVisibleIcons(prev => prev.filter(id => id !== 'man' && id !== 'message'));
-          } else {
-            setVisibleIcons(prev => prev.filter(id => id !== icons[currentIndex].id));
-          }
-          setCurrentIndex(prev => prev - 1);
-        } else {
-          // All icons have disappeared, switch back to appearing phase
-          setPhase('appearing');
-          setCurrentIndex(0);
-        }
-      }
-    }, 1000); // Each step takes 1 second
-    
+      setCurrentStep(prev => {
+        const nextStep = (prev + 1) % steps.length;
+        steps[nextStep]();
+        return nextStep;
+      });
+    }, 1000);
+
     return () => clearInterval(interval);
-  }, [phase, currentIndex]);
+  }, []);
 
   return (
     <div className="opensource">
@@ -89,4 +78,4 @@ function OpenSource() {
   );
 }
 
-export default OpenSource;
+export default OpenSource

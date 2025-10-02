@@ -1,4 +1,10 @@
 /* Opensource.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+}
 /* Navbar stays normal (not fixed) */
 .navbar {
   position: relative;
@@ -155,7 +161,7 @@
   top: 110%; /* Same vertical position as man */
   left: 67%;
   transform: translateX(-50%) translateY(-70px); /* Positioned above man */
-  animation: float 6s ease-in-out infinite;
+  animation: float 7s ease-in-out infinite;
   z-index: 5; /* Higher than man icon to appear on top */
   border-radius: 50px;
 }
@@ -170,57 +176,29 @@
   z-index: 6; /* Highest z-index to appear on top */
 }
 
-/* Floating Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
+
+
 
 /* For message icon, preserve its specific transform */
 .float-icon_yellow {
   animation: float-message 6s ease-in-out infinite;
 }
 
-@keyframes float-message {
-  0%, 100% {
-    transform: translateX(-50%) translateY(-70px) translateY(0px);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-70px) translateY(-10px);
-  }
-}
+
+
 
 /* For man icon */
 .float-icon_blue {
   animation: float-man 7s ease-in-out infinite;
 }
 
-@keyframes float-man {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0px);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-8px);
-  }
-}
 
 /* For bell icon */
 .float-icon_bell {
   animation: float-bell 6s ease-in-out infinite;
 }
 
-@keyframes float-bell {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0px);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-}
+
 
 /* Remove white backgrounds from all icons */
 .hero-two img[class*="float-icon"] {

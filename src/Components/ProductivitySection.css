@@ -1,0 +1,122 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.productivity-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 60px 20px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+}
+
+.productivity-section.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.rocket-container {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease-out 0.3s;
+}
+
+.productivity-section.visible .rocket-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.video-container {
+  flex: 1;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out 0.6s;
+}
+
+.productivity-section.visible .video-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e325c;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #828799;
+  margin: 0;
+  text-align: left;
+}
+
+.rocket-container img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .productivity-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 16px 40px 16px;
+    transform: translateY(50px);
+  }
+  
+  .productivity-section.visible {
+    transform: translateY(0);
+  }
+  
+  .rocket-container,
+  .video-container {
+    max-width: 100%;
+    transform: translateY(30px);
+  }
+  
+  .productivity-section.visible .rocket-container,
+  .productivity-section.visible .video-container {
+    transform: translateY(0);
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .video-container {
+    height: 300px;
+  }
+}
