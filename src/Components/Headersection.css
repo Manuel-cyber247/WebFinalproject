@@ -1,24 +1,93 @@
-div {
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+.header-section {
   display: flex;
 
+  gap: 15rem;
 }
-.header-content {
+
+.header-1 {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-content {
+  padding-top: 80px;
+  padding-left: 10rem;
+  flex: 1;
+  text-align: left;
   flex-direction: column;
-  padding-right: 13rem;
-  color: darkblue;
-  font-size: 10px; 
+  max-width: 700px;
   justify-content: space-evenly;
 }
-p{
-height: 50%;
-font-size: medium;
-color: dimgrey;
+
+.header-content h1 {
+  font-size: 2.0rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  color: darkblue;
 }
 
-div vIdeo{
-  width: 500px;
-  height: auto;
-  box-shadow: 50px;
-  border-radius: 8px;
+.header-content h1 img {
+  height: 50px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+.header-content p {
+  font-size: 1.1rem;
+  color: dimgrey;
+}
+
+.video-container {
+  flex: 0;
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  
+  max-width: 600px;
+  justify-content: right;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .header-1 {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .header-content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .header-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Ensure body/html allow scrolling */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
