@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-import focalboard_image from '../Assets/focalboard_image.png';
+import focalboard_image from '../assets/focalboard_image.png';
 import './Opensource.css';
 function Navbar() {
   return (

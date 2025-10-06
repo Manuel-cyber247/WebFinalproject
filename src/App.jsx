@@ -7,6 +7,7 @@ import Organize from './Components/Organize'
 function App() {
   return (
     <>
+    {/* This Part was done by Neche */}
     {/* This is the navigation bar */}
       <Navbar />
       {/* This is the second content */}
