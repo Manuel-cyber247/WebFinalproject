@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './ProductivitySection.css';
-import rocket from '../Assets/rocket.png';
-import video from '../Assets/accelerateone.mp4';
+import rocket from '../assets/rocket.png';
+import video from '../assets/accelerateone.mp4';
 
 function ProductivitySection() {
   const [isVisible, setIsVisible] = useState(false);

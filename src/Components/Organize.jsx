@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Organize.css';
-import boardview from '../Assets/boardview.png';
-import listview from '../Assets/listview.png';
-import calendarview from '../Assets/calendarview.png';
-import galleryview from '../Assets/galleryview.png';
+import boardview from '../assets/boardview.png';
+import listview from '../assets/listview.png';
+import calendarview from '../assets/calendarview.png';
+import galleryview from '../assets/galleryview.png';
 
 function Organize() {
     const [activeView, setActiveView] = useState('board');
